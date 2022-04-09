@@ -1,0 +1,165 @@
+html { 
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth; 
+  font-family: sans-serif; 
+}
+body { position: relative; margin: 0; padding: 0; height: 100vh; width: 100vw; }
+
+:root {
+  --primary: #ffffff;
+}
+
+/* GENERICS */
+.container { max-width: 580px; padding: 10px; }
+.row { width: 100%; display: flex; }
+
+/* MAP STUFF */
+#map { position: fixed; height: 100%; width: 100%; }
+
+/* TRAY STUFF */
+#tray { 
+  position: absolute; 
+  top: 85vh; 
+  left: 50%;
+  transform: translate(-50%);
+  width: 600px; 
+  max-width: 100%;
+  margin: auto;
+  height: 90vh; 
+  background-color: whitesmoke;  
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#tray-handle { cursor: pointer; align-self: center; }
+#tray-handle hr { width: 50px; border: 1px solid #666666; border-radius: 2px; margin: 10px; }
+#tray-react-app { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+/* TRAY APP STYLES */
+.menu-row { width: 100%; display: flex; align-items: center; }
+.menu-button { 
+  width: 50px; 
+  height: 50px; 
+  border: none; 
+  background-color: whitesmoke; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.menu-button.is-active { border-bottom: solid 2px grey; }
+.menu-icon { width: 30px; height: 30px; }
+
+#menu-content {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0px;
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: max-height 0.4s ease-out;
+}
+#menu-content.is-active {
+  max-height: 250px;
+}
+
+#auth-box {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+#auth-button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; 
+}
+.hamburger-box {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative; }
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; 
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: #000000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; 
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; 
+}
+.hamburger-inner::before {
+  top: -6px; 
+}
+.hamburger-inner::after {
+  bottom: -6px; 
+}
+/*
+ * Spring
+ */
+.hamburger--spring .hamburger-inner {
+  top: 6px;
+  transition: background-color 0s 0.13s linear; 
+}
+.hamburger--spring .hamburger-inner::before {
+  top: 10px;
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--spring .hamburger-inner::after {
+  top: 20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--spring.is-active .hamburger-inner {
+  transition-delay: 0.22s;
+  background-color: transparent !important; 
+}
+.hamburger--spring.is-active .hamburger-inner::before {
+  top: 0;
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(0, 10px, 0) rotate(45deg); 
+}
+.hamburger--spring.is-active .hamburger-inner::after {
+  top: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(0, 10px, 0) rotate(-45deg); 
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000000; 
+}

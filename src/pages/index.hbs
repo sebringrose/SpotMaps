@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SpotMaps | Find Skate Spots</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+  
+  <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="map"></div>
+  
+  <div id="tray">
+    <div id="tray-handle">
+      <hr>
+    </div>
+    
+    <div id="tray-react-app"></div>
+  </div>
+
+  <!-- SMOOTH SCROLL POLYFILL FOR iOS & MAC SAFARI -->
+  <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+  
+  <script src="/mapbox.js" type="module"></script>
+  <script src="/tray-app/index.js" type="module"></script>
+</body>
+</html>
